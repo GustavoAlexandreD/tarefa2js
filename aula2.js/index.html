@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = Number(prompt("digite um número"));
+        var num2 = Number(prompt("digite outro número"));
+        if(num1 > num2){
+            document.write(num1);
+        }
+        else{
+            document.write(num2);
+        }
+
+        var num3 = Number(prompt("digite um número"));
+        if(num3 < 0){
+            document.write("<br>O número é negativo <br>");
+        }
+        else{
+            document.write("<br>O número é positivo <br>");
+        }
+
+        do{
+        var sexo = prompt("digite f para feminino ou m para masculino");
+        }while(sexo!= "f" && sexo!= "m");
+        switch(sexo){
+            case "f":
+                document.write("<br>feminino<br>");
+                break;
+            case "m":
+                document.write("<br>masculino<br>");
+                break;
+        }
+
+        var letra = prompt("digite uma letra");
+        if(letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u"){
+            document.write("<br>A letra é vogal<br>");
+        }
+        else{
+            document.write("<br>A letra é consoante<br>");
+        }
+
+        var nota1 = parseFloat(prompt(" digite a nota 1"));
+        var nota2 = parseFloat(prompt("digite a nota 2 "));
+        var media = (nota1 + nota2) / 2;
+        media = media.toFixed(2);
+        if(media >= 7 && media < 10 ){
+            document.write("<br>A média é " + media + ". Aprovado");
+        }
+        else if(media == 10){
+            document.write("<br>A média é " + media + ". Aprovado com distinção");
+        }
+        else{
+            document.write("<br>A média é " + media + ". Reprovado");
+        }
+
+        let input = prompt("Digite os números separados por vírgula:");
+        let array = input.split(',').map(Number);
+        let n = array.length;
+        let swapped;
+        do {
+            swapped = false;
+            for (let i = 0; i < n - 1; i++) {
+                if (array[i] >   array[i + 1]) {
+                    let temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped = true; 
+                }
+            }
+            n--; 
+        } while (swapped);
+        document.write("<br>O menor número é: " + array[0]);
+        document.write("<br>O maior número é:", array[array.length - 1]);
+
+        let numeros3 = prompt("Digite 3 números separados por vírgula:");
+        let vetornumeros3 = numeros3.split(',').map(Number);
+        let l = vetornumeros3.length;
+        do {
+            swapped = false;
+            for (let k = 0; k < l - 1; k++) {
+                if (vetornumeros3[k] < vetornumeros3[k + 1]) { 
+                    let aux = vetornumeros3[k];
+                    vetornumeros3[k] = vetornumeros3[k + 1];
+                    vetornumeros3[k + 1] = aux;
+                    swapped = true; 
+                }
+            }
+        l--; 
+        } while (swapped);
+        document.write("<br>Números em ordem decrescente:");
+        for(let w = 0; w < vetornumeros3.length; w++){
+            document.write("<br>" + vetornumeros3[w]);
+        } 
+        // document.write("<br>" + array[0]);
+        // document.write("<br>O menor número é: " + vetornumeros3[0]);
+        // document.write("<br>O maior número é:", vetornumeros3[vetornumeros3.length - 1]);
+
+        var precoProduto1 = parseFloat(prompt("Digite o preço do primeiro produto:"));
+        var precoProduto2 = parseFloat(prompt("Digite o preço do segundo produto:"));
+        var precoProduto3 = parseFloat(prompt("Digite o preço do terceiro produto:"));
+
+        // Verifica qual produto é o mais barato
+        if (precoProduto1 < precoProduto2 && precoProduto1 < precoProduto3) {
+            document.write("<br>Você deve comprar o primeiro produto, que custa: R$ " + precoProduto1.toFixed(2));
+        } else if (precoProduto2 < precoProduto1 && precoProduto2 < precoProduto3) {
+            document.write("<br>Você deve comprar o segundo produto, que custa: R$ " + precoProduto2.toFixed(2));
+        } else if (precoProduto3 < precoProduto1 && precoProduto3 < precoProduto2) {
+            document.write("<br>Você deve comprar o terceiro produto, que custa: R$ " + precoProduto3.toFixed(2));
+        } else {
+            document.write(" <br> Pelo menos dois produtos têm o mesmo preço mais baixo.");
+        }
+
+        do{
+        var turno = prompt("digite o turno q vc estuda: v para vespertino, m para matutino e n para noturno");
+        }while(turno!= "v" && turno!= "m" && turno!= "n");
+        switch(turno){
+            case "v":
+                document.write("<br>boa tarde");
+                break;
+            case "m":
+                document.write("<br>bom dia");
+                break;
+            case "n":
+                document.write("<br>boa noite");
+                break;
+        };
+        
+
+
+        
+
+
+    </script>
+</body>
+</html>
